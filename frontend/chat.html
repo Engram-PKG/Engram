@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat with your twin — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/chat.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="chat-shell">
+  <aside class="convo-rail">
+    <div class="convo-rail-head">
+      <a href="dashboard.html" class="brand" style="margin-bottom:16px;"><svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg><span>Digital Twin</span></a>
+      <button class="new-chat-btn">+ New conversation</button>
+    </div>
+    <div class="convo-list">
+      <div class="convo-item active">
+        <div class="title">Q3 roadmap decisions</div>
+        <div class="preview">You: What did I decide about scope?</div>
+      </div>
+      <div class="convo-item">
+        <div class="title">Feeling behind lately</div>
+        <div class="preview">Twin: I noticed a pattern across…</div>
+      </div>
+      <div class="convo-item">
+        <div class="title">Books I meant to read</div>
+        <div class="preview">Twin: You logged two so far this…</div>
+      </div>
+      <div class="convo-item">
+        <div class="title">Trip planning notes</div>
+        <div class="preview">You: Pull up what I saved about…</div>
+      </div>
+      <div class="convo-item">
+        <div class="title">Team 1:1 recap patterns</div>
+        <div class="preview">Twin: Comparing to last quarter…</div>
+      </div>
+    </div>
+    <div class="rail-foot" style="padding:16px 20px;">
+      <div class="avatar"></div>
+      <div class="who"><div class="name">Jordan Avery</div><div class="plan">Free plan</div></div>
+    </div>
+  </aside>
+
+  <div class="chat-main">
+    <div class="chat-topbar">
+      <div class="who">
+        <div class="thread-badge"><div class="core"></div></div>
+        <div>
+          <div class="name">Your Twin</div>
+          <div class="status">● trained on 18,204 memories</div>
+        </div>
+      </div>
+      <a href="settings.html" class="btn btn-ghost btn-sm">Twin settings</a>
+    </div>
+
+    <div class="chat-scroll" data-chat-scroll>
+      <div class="msg from-twin">
+        <div class="avatar"><div class="thread-badge" style="width:32px;height:32px;"><div class="core" style="width:10px;height:10px;"></div></div></div>
+        <div>
+          <div class="bubble">Hey Jordan — welcome back. Want to pick up the Q3 roadmap thread, or ask me something new?</div>
+          <div class="msg-meta">9:02 AM</div>
+        </div>
+      </div>
+      <div class="msg from-user">
+        <div class="avatar">🙂</div>
+        <div>
+          <div class="bubble">What did I actually decide about the Q3 scope cut?</div>
+          <div class="msg-meta">9:03 AM</div>
+        </div>
+      </div>
+      <div class="msg from-twin">
+        <div class="avatar"><div class="thread-badge" style="width:32px;height:32px;"><div class="core" style="width:10px;height:10px;"></div></div></div>
+        <div>
+          <div class="bubble">On July 8th you told the team you'd rather ship the reporting dashboard late than cut the export feature — you called it "the one thing people actually asked for." That's held steady in every thread since.</div>
+          <div class="chat-source-chip">⟡ drawn from 4 Slack messages, 1 doc</div>
+          <div class="msg-meta">9:03 AM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-composer">
+      <form data-composer-form>
+        <div class="composer-box">
+          <textarea data-composer-input rows="1" placeholder="Ask your twin anything about your past…"></textarea>
+          <button type="submit" class="send-btn" aria-label="Send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </form>
+      <div class="composer-hint">Enter to send · Shift + Enter for a new line</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>DT.initChat();</script>
+</body>
+</html>
