@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="rail">
+    <a href="index.html" class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg><span>Digital Twin</span></a>
+    <nav class="rail-nav">
+      <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+      <a href="chat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Chat</span></a>
+      <a href="timeline.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="4" y2="20"/><circle cx="4" cy="8" r="1.5"/><circle cx="4" cy="14" r="1.5"/><circle cx="4" cy="20" r="1.5"/><line x1="9" y1="8" x2="20" y2="8"/><line x1="9" y1="14" x2="20" y2="14"/><line x1="9" y1="20" x2="20" y2="20"/></svg><span>Timeline</span></a>
+      <a href="graph.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="12" y1="7.5" x2="5" y2="16.5"/><line x1="12" y1="7.5" x2="19" y2="16.5"/></svg><span>Graph</span></a>
+      <a href="search.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Search</span></a>
+      <a href="reflection.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg><span>Reflections</span></a>
+      <div class="rail-section-label">Manage</div>
+      <a href="connectors.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 8.5 15.5 15.5"/></svg><span>Connectors</span></a>
+      <a href="settings.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a>
+    </nav>
+    <div class="rail-foot">
+      <div class="avatar"></div>
+      <div class="who"><div class="name">Jordan Avery</div><div class="plan">Free plan</div></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1>Settings</h1>
+        <div class="sub">Manage your profile, privacy, and how your twin behaves.</div>
+      </div>
+    </div>
+
+    <div class="settings-layout">
+      <nav class="settings-nav">
+        <a href="#" class="active" data-section="profile">Profile</a>
+        <a href="#" data-section="privacy">Privacy &amp; data</a>
+        <a href="#" data-section="notifications">Notifications</a>
+        <a href="#" data-section="twin">Twin behavior</a>
+        <a href="#" data-section="danger">Danger zone</a>
+      </nav>
+
+      <div>
+        <section class="settings-section" data-settings-section="profile">
+          <h3>Profile</h3>
+          <p>How your account appears across Digital Twin.</p>
+          <div class="card-grid grid-2">
+            <div class="field"><label for="setName">Full name</label><input type="text" id="setName" value="Jordan Avery"></div>
+            <div class="field"><label for="setEmail">Email address</label><input type="email" id="setEmail" value="jordan@domain.com"></div>
+          </div>
+          <button class="btn btn-primary btn-sm">Save changes</button>
+        </section>
+
+        <section class="settings-section" data-settings-section="privacy" style="display:none;">
+          <h3>Privacy &amp; data</h3>
+          <p>Control exactly what your twin can access and remember.</p>
+          <div class="settings-row">
+            <div><div class="lbl">Allow twin to reference message content in chat</div><div class="hint">Turning this off limits answers to summaries only.</div></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="settings-row">
+            <div><div class="lbl">Weekly reflection emails</div><div class="hint">Sent every Monday at 8:00 AM.</div></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="settings-row">
+            <div><div class="lbl">Share anonymized patterns to improve Digital Twin</div><div class="hint">Never includes your raw content — only aggregated statistics.</div></div>
+            <label class="switch"><input type="checkbox"><span class="track"></span></label>
+          </div>
+        </section>
+
+        <section class="settings-section" data-settings-section="notifications" style="display:none;">
+          <h3>Notifications</h3>
+          <p>Choose what your twin should interrupt you for.</p>
+          <div class="settings-row">
+            <div><div class="lbl">New reflection available</div></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="settings-row">
+            <div><div class="lbl">Connector sync issues</div></div>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div class="settings-row">
+            <div><div class="lbl">Product updates</div></div>
+            <label class="switch"><input type="checkbox"><span class="track"></span></label>
+          </div>
+        </section>
+
+        <section class="settings-section" data-settings-section="twin" style="display:none;">
+          <h3>Twin behavior</h3>
+          <p>Tune how your twin responds in chat and reflections.</p>
+          <div class="field">
+            <label for="setTone">Response tone</label>
+            <select id="setTone">
+              <option>Match my own tone</option>
+              <option>Direct and concise</option>
+              <option>Warm and reflective</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="setMemoryWindow">Memory window</label>
+            <select id="setMemoryWindow">
+              <option>All time</option>
+              <option>Last 12 months</option>
+              <option>Last 90 days</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-sm">Save changes</button>
+        </section>
+
+        <section class="settings-section" data-settings-section="danger" style="display:none;">
+          <h3>Danger zone</h3>
+          <p>These actions are permanent, or take up to 14 days to reverse.</p>
+          <div class="danger-zone">
+            <div class="settings-row" style="border:none;">
+              <div><div class="lbl">Delete your digital twin</div><div class="hint">Removes all learned memories and connected sources.</div></div>
+              <button class="btn-danger" data-delete-twin>Delete twin</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script>DT.initSettings();</script>
+</body>
+</html>
