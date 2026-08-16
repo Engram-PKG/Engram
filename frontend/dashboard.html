@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="rail">
+    <a href="index.html" class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg><span>Digital Twin</span></a>
+    <nav class="rail-nav">
+      <a href="dashboard.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+      <a href="chat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Chat</span></a>
+      <a href="timeline.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="4" y2="20"/><circle cx="4" cy="8" r="1.5"/><circle cx="4" cy="14" r="1.5"/><circle cx="4" cy="20" r="1.5"/><line x1="9" y1="8" x2="20" y2="8"/><line x1="9" y1="14" x2="20" y2="14"/><line x1="9" y1="20" x2="20" y2="20"/></svg><span>Timeline</span></a>
+      <a href="graph.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="12" y1="7.5" x2="5" y2="16.5"/><line x1="12" y1="7.5" x2="19" y2="16.5"/></svg><span>Graph</span></a>
+      <a href="search.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Search</span></a>
+      <a href="reflection.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg><span>Reflections</span></a>
+      <div class="rail-section-label">Manage</div>
+      <a href="connectors.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 8.5 15.5 15.5"/></svg><span>Connectors</span></a>
+      <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a>
+    </nav>
+    <div class="rail-foot">
+      <div class="avatar"></div>
+      <div class="who"><div class="name">Jordan Avery</div><div class="plan">Free plan</div></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1>Good to see you, Jordan.</h1>
+        <div class="sub">Your twin has been listening. Here's what changed since Tuesday.</div>
+      </div>
+      <div class="topbar-actions">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Ask your twin anything…" onclick="location.href='search.html'" readonly>
+        </div>
+        <a href="chat.html" class="btn btn-primary btn-sm">Open chat</a>
+      </div>
+    </div>
+
+    <div class="card-grid grid-4" style="margin-bottom:24px;">
+      <div class="card stat-card">
+        <div class="label">Memories indexed</div>
+        <div class="value">18,204</div>
+        <div class="delta up">↑ 312 today</div>
+      </div>
+      <div class="card stat-card">
+        <div class="label">Sources connected</div>
+        <div class="value">4</div>
+        <div class="delta up">of 6 available</div>
+      </div>
+      <div class="card stat-card">
+        <div class="label">Reflections this week</div>
+        <div class="value">7</div>
+        <div class="delta up">↑ 2 new</div>
+      </div>
+      <div class="card stat-card">
+        <div class="label">Twin accuracy</div>
+        <div class="value">98.4%</div>
+        <div class="delta up">↑ 0.6%</div>
+      </div>
+    </div>
+
+    <div class="card-grid grid-2">
+      <div class="card">
+        <div class="card-head">
+          <h3>Recent activity</h3>
+          <a href="timeline.html">View timeline →</a>
+        </div>
+        <div class="row-list">
+          <div class="row-item">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="row-body"><div class="title">You asked about last quarter's roadmap</div><div class="meta">Twin referenced 4 Slack threads and 1 doc</div></div>
+            <div class="row-time">2h ago</div>
+          </div>
+          <div class="row-item">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div>
+            <div class="row-body"><div class="title">Calendar synced — 14 new events</div><div class="meta">Google Calendar</div></div>
+            <div class="row-time">6h ago</div>
+          </div>
+          <div class="row-item">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+            <div class="row-body"><div class="title">New reflection: "Your Tuesday focus block"</div><div class="meta">Pattern detected across 6 weeks</div></div>
+            <div class="row-time">Yesterday</div>
+          </div>
+          <div class="row-item">
+            <div class="row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/></svg></div>
+            <div class="row-body"><div class="title">Notion synced — 32 notes indexed</div><div class="meta">Notion</div></div>
+            <div class="row-time">2 days ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Latest reflection</h3>
+          <a href="reflection.html">See all →</a>
+        </div>
+        <span class="eyebrow" style="margin-bottom:14px;">Pattern detected</span>
+        <blockquote style="font-family:var(--font-display);font-size:19px;font-style:italic;color:var(--text);margin:0 0 14px;">"You've mentioned feeling behind on three separate projects this month — usually right after a scheduling conflict."</blockquote>
+        <div class="reflection-tags">
+          <span class="tag twin">Stress pattern</span>
+          <span class="tag human">Work</span>
+        </div>
+        <div style="margin-top:22px;">
+          <a href="chat.html" class="btn btn-ghost btn-sm">Talk it through</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
