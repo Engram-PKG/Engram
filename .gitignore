@@ -20,3 +20,6 @@ db_data/
 .DS_Store
 .vscode/
 .idea/
+
+# Local sprint prompt documents (never commit these)
+Engram-Sprints/
