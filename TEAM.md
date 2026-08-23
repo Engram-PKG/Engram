@@ -41,8 +41,7 @@
   - Final production deployment to cloud (VPS or Fly.io/Render)
 - **Code review** — reviews and approves all PRs from Yashi and Avinash before merge
 
-**What Aditya can say in an interview:**
-> "I led a 3-person team building a production AI product. I personally designed and implemented the full RAG pipeline — embedding chunks, storing vectors in pgvector, and building the retrieval logic that feeds Claude with cited context. I also built the agentic tool-use loop where the AI can draft emails or calendar events, but nothing executes on a live account without explicit user confirmation. I handled all DevOps — Docker, CI/CD with GitHub Actions, structured logging, and cloud deployment."
+
 
 ---
 
@@ -64,8 +63,7 @@
 - Owns **all new database models and Alembic migrations** for connectors, ingestion, and graph data
 - Owns the **Knowledge Graph data model** — entity and edge tables in Postgres
 
-**What Yashi can say in an interview:**
-> "I architected and bootstrapped the entire project from scratch — I wrote the full system design document, set up Docker orchestration across 5 services, defined the FastAPI structure, created the database models with pgvector, and wrote all project documentation before the team started building. I then owned the backend data layer: I built the connector framework with OAuth 2.0 flows for Gmail, Google Calendar, Notion, and Slack, and designed the ingestion pipeline that normalizes raw data, dispatches Celery background tasks for enrichment, and stores it all for AI retrieval. I also implemented the full authentication system with JWT and bcrypt."
+
 
 ---
 
@@ -86,8 +84,7 @@
 - Implements the **Action Confirmation UI** — inline draft cards in chat with Confirm/Cancel
 - Manages the **nginx configuration** for frontend serving and Content Security Policy headers
 
-**What Avinash can say in an interview:**
-> "I owned the entire frontend of an AI personal assistant product. I built and maintained 12 pages including a real-time streaming chat interface, a canvas-rendered knowledge graph visualization with force-directed layout, and a multi-tab settings panel — all in vanilla HTML/CSS/JS with no framework, which gave me deep control over performance and animations. Throughout the project my responsibility was to progressively wire each page from mocked data to live API responses as backend features were delivered, including auth flows, SSE streaming for chat, semantic search results, and the agentic action confirmation cards."
+
 
 ---
 
