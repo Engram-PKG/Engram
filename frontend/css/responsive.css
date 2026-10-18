@@ -13,9 +13,9 @@
   .connector-grid{ grid-template-columns: repeat(2, 1fr); }
   .app-shell{ grid-template-columns: 76px 1fr; }
   .rail{ padding: 20px 12px; }
-  .rail .brand span, .rail-nav a span, .rail-foot .who, .rail-section-label{ display: none; }
+  .rail .brand span, .rail-nav a span, .rail .rail-foot .who, .rail-section-label{ display: none; }
   .rail-nav a{ justify-content: center; }
-  .rail-foot{ justify-content: center; }
+  .rail .rail-foot{ justify-content: center; }
 }
 
 /* ---- tablets ---- */
@@ -44,6 +44,7 @@
   .topbar{ flex-direction: column; align-items: flex-start; }
   .search-box{ min-width: 0; width: 100%; }
   .chat-scroll{ padding: 22px 18px; }
+  .graph-canvas-wrap{ height: 520px; }
   .chat-composer{ padding: 14px 18px 20px; }
   .msg{ max-width: 88%; }
   .oauth-row{ grid-template-columns: 1fr; }
