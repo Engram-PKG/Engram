@@ -29,6 +29,14 @@ the body when it's not obvious from the diff.
   this via `disallow_untyped_defs`). Run `mypy app`.
 - **Tests**: `pytest`, async tests via `pytest-asyncio` (`asyncio_mode = auto`,
   no per-test decorator needed). New endpoints need at least one test.
+  **Run pytest against a separate `digitaltwin_test` database, never the
+  `digitaltwin` one `docker compose up` uses** — tests commit real rows and
+  don't clean up after themselves, and it's easy to confuse the two since
+  both live in the same Postgres container on the same port. Locally:
+  `createdb`-equivalent is `psql -c "CREATE DATABASE digitaltwin_test"` then
+  `psql -d digitaltwin_test -c "CREATE EXTENSION vector"`, then point
+  `DATABASE_URL` at it before running `alembic upgrade head` / `pytest`. CI
+  is unaffected — its Postgres service is a fresh container every run.
 - **Structure**: keep the layering in `backend/app/` — `api/` (routing only),
   `schemas/` (Pydantic I/O models), `models/` (SQLAlchemy ORM), `db/`
   (engine/session), `core/` (config/security), `workers/` (Celery tasks).

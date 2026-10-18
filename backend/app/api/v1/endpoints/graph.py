@@ -1,11 +1,19 @@
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.api.deps import get_current_user
+from app.db.session import get_db
+from app.models.user import User
+from app.schemas.graph import GraphResponse
+from app.services.graph.build import get_graph
 
 router = APIRouter()
 
-# Phase 2/3: entity extraction populates node/edge tables during ingestion;
-# this endpoint will serve them to replace graph.html's hardcoded dataset.
 
-
-@router.get("/", status_code=status.HTTP_501_NOT_IMPLEMENTED)
-async def get_graph() -> None:
-    raise HTTPException(status.HTTP_501_NOT_IMPLEMENTED, "Graph not implemented yet")
+@router.get("/", response_model=GraphResponse)
+async def knowledge_graph(
+    current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)
+) -> dict:
+    """People, organizations and topics across the user's memories, and how they connect.
+    Built from stored data (services/graph/) and cached until the memories change."""
+    return await get_graph(current_user, db)

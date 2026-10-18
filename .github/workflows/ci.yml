@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
   test:
@@ -64,6 +64,10 @@ jobs:
       - name: Mypy — type check
         working-directory: backend
         run: mypy app
+
+      - name: Alembic — run migrations
+        working-directory: backend
+        run: alembic upgrade head
 
       - name: Pytest — run tests
         working-directory: backend

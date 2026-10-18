@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Settings — Digital Twin</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/dashboard.css">
-<link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/dashboard.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
 </head>
 <body>
 
@@ -23,11 +23,13 @@
       <a href="reflection.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg><span>Reflections</span></a>
       <div class="rail-section-label">Manage</div>
       <a href="connectors.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 8.5 15.5 15.5"/></svg><span>Connectors</span></a>
+      <a href="uploads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span>Uploads</span></a>
       <a href="settings.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a>
     </nav>
     <div class="rail-foot">
       <div class="avatar"></div>
-      <div class="who"><div class="name">Jordan Avery</div><div class="plan">Free plan</div></div>
+      <div class="who"><div class="name">&nbsp;</div><div class="plan">&nbsp;</div></div>
+      <a href="#" data-logout title="Log out" style="margin-left:auto;opacity:.6;">⏻</a>
     </div>
   </aside>
 
@@ -41,88 +43,144 @@
 
     <div class="settings-layout">
       <nav class="settings-nav">
-        <a href="#" class="active" data-section="profile">Profile</a>
-        <a href="#" data-section="privacy">Privacy &amp; data</a>
-        <a href="#" data-section="notifications">Notifications</a>
-        <a href="#" data-section="twin">Twin behavior</a>
-        <a href="#" data-section="danger">Danger zone</a>
+        <a href="#profile" class="active" data-section="profile">Profile</a>
+        <a href="#privacy" data-section="privacy">Privacy &amp; data</a>
+        <a href="#twin" data-section="twin">Twin behavior</a>
+        <a href="#danger" data-section="danger">Danger zone</a>
       </nav>
 
-      <div>
+      <div class="settings-content">
         <section class="settings-section" data-settings-section="profile">
-          <h3>Profile</h3>
-          <p>How your account appears across Digital Twin.</p>
-          <div class="card-grid grid-2">
-            <div class="field"><label for="setName">Full name</label><input type="text" id="setName" value="Jordan Avery"></div>
-            <div class="field"><label for="setEmail">Email address</label><input type="email" id="setEmail" value="jordan@domain.com"></div>
+          <div class="settings-section-head">
+            <h3>Profile</h3>
+            <p>How your account appears across Digital Twin.</p>
           </div>
-          <button class="btn btn-primary btn-sm">Save changes</button>
-        </section>
 
-        <section class="settings-section" data-settings-section="privacy" style="display:none;">
-          <h3>Privacy &amp; data</h3>
-          <p>Control exactly what your twin can access and remember.</p>
-          <div class="settings-row">
-            <div><div class="lbl">Allow twin to reference message content in chat</div><div class="hint">Turning this off limits answers to summaries only.</div></div>
-            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
-          </div>
-          <div class="settings-row">
-            <div><div class="lbl">Weekly reflection emails</div><div class="hint">Sent every Monday at 8:00 AM.</div></div>
-            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
-          </div>
-          <div class="settings-row">
-            <div><div class="lbl">Share anonymized patterns to improve Digital Twin</div><div class="hint">Never includes your raw content — only aggregated statistics.</div></div>
-            <label class="switch"><input type="checkbox"><span class="track"></span></label>
-          </div>
-        </section>
-
-        <section class="settings-section" data-settings-section="notifications" style="display:none;">
-          <h3>Notifications</h3>
-          <p>Choose what your twin should interrupt you for.</p>
-          <div class="settings-row">
-            <div><div class="lbl">New reflection available</div></div>
-            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
-          </div>
-          <div class="settings-row">
-            <div><div class="lbl">Connector sync issues</div></div>
-            <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
-          </div>
-          <div class="settings-row">
-            <div><div class="lbl">Product updates</div></div>
-            <label class="switch"><input type="checkbox"><span class="track"></span></label>
-          </div>
-        </section>
-
-        <section class="settings-section" data-settings-section="twin" style="display:none;">
-          <h3>Twin behavior</h3>
-          <p>Tune how your twin responds in chat and reflections.</p>
-          <div class="field">
-            <label for="setTone">Response tone</label>
-            <select id="setTone">
-              <option>Match my own tone</option>
-              <option>Direct and concise</option>
-              <option>Warm and reflective</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="setMemoryWindow">Memory window</label>
-            <select id="setMemoryWindow">
-              <option>All time</option>
-              <option>Last 12 months</option>
-              <option>Last 90 days</option>
-            </select>
-          </div>
-          <button class="btn btn-primary btn-sm">Save changes</button>
-        </section>
-
-        <section class="settings-section" data-settings-section="danger" style="display:none;">
-          <h3>Danger zone</h3>
-          <p>These actions are permanent, or take up to 14 days to reverse.</p>
-          <div class="danger-zone">
-            <div class="settings-row" style="border:none;">
-              <div><div class="lbl">Delete your digital twin</div><div class="hint">Removes all learned memories and connected sources.</div></div>
-              <button class="btn-danger" data-delete-twin>Delete twin</button>
+          <form class="settings-card" data-profile-form novalidate>
+            <div class="settings-card-head">
+              <h4>Personal info</h4>
             </div>
+            <div class="card-grid grid-2">
+              <div class="field"><label for="setName">Full name</label><input type="text" id="setName" maxlength="100" autocomplete="name" placeholder="Your name"></div>
+              <div class="field"><label for="setEmail">Email address</label><input type="email" id="setEmail" autocomplete="email" required></div>
+            </div>
+            <div class="field" data-email-password hidden>
+              <label for="setEmailPassword">Current password</label>
+              <input type="password" id="setEmailPassword" autocomplete="current-password">
+              <div class="field-hint">Your email is how you log in, so changing it needs your password.</div>
+            </div>
+            <div class="form-alert" data-profile-alert></div>
+            <div class="settings-actions">
+              <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+            </div>
+          </form>
+
+          <form class="settings-card" data-password-form novalidate>
+            <div class="settings-card-head">
+              <h4>Password</h4>
+              <p>Use at least 8 characters.</p>
+            </div>
+            <div class="card-grid grid-3">
+              <div class="field"><label for="setCurrentPassword">Current password</label><input type="password" id="setCurrentPassword" autocomplete="current-password" required></div>
+              <div class="field"><label for="setNewPassword">New password</label><input type="password" id="setNewPassword" autocomplete="new-password" minlength="8" required></div>
+              <div class="field"><label for="setConfirmPassword">Confirm new password</label><input type="password" id="setConfirmPassword" autocomplete="new-password" minlength="8" required></div>
+            </div>
+            <div class="form-alert" data-password-alert></div>
+            <div class="settings-actions">
+              <button type="submit" class="btn btn-ghost btn-sm">Update password</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="settings-section" data-settings-section="privacy" hidden>
+          <div class="settings-section-head">
+            <h3>Privacy &amp; data</h3>
+            <p>Control exactly what your twin can access and remember.</p>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-row">
+              <div><div class="lbl">Allow twin to reference message content in chat</div><div class="hint">When off, your twin only sees each memory's title, source and date, never the body.</div></div>
+              <label class="switch"><input type="checkbox" data-pref-content aria-label="Allow twin to reference message content in chat"><span class="track"></span></label>
+            </div>
+          </div>
+          <div class="form-alert" data-privacy-alert></div>
+
+          <div class="settings-card">
+            <div class="settings-card-head">
+              <h4>What your twin stores</h4>
+              <p>Forgetting deletes those memories from your twin. It doesn't touch the originals in Gmail or Calendar.</p>
+            </div>
+            <div data-data-summary><div class="hint">Loading…</div></div>
+          </div>
+
+          <div class="settings-card">
+            <div class="settings-row">
+              <div><div class="lbl">Export your data</div><div class="hint">Download everything stored for your account as JSON: profile, connected sources, memories, conversations and email drafts. Passwords and access tokens are never included.</div></div>
+              <button type="button" class="btn btn-ghost btn-sm" data-export>Download</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" data-settings-section="twin" hidden>
+          <div class="settings-section-head">
+            <h3>Twin behavior</h3>
+            <p>Tune how your twin responds in chat.</p>
+          </div>
+
+          <form class="settings-card" data-twin-form>
+            <div class="field">
+              <label for="setTone">Response tone</label>
+              <select id="setTone">
+                <option value="balanced">Balanced</option>
+                <option value="concise">Direct and concise</option>
+                <option value="warm">Warm and reflective</option>
+              </select>
+              <div class="field-hint" data-tone-hint></div>
+            </div>
+            <div class="field">
+              <label for="setMemoryWindow">Memory window</label>
+              <select id="setMemoryWindow">
+                <option value="">All time</option>
+                <option value="365">Last 12 months</option>
+                <option value="90">Last 90 days</option>
+              </select>
+              <div class="field-hint">Your twin only searches memories from this period. Nothing older is deleted; it's just left out of answers.</div>
+            </div>
+            <div class="form-alert" data-twin-alert></div>
+            <div class="settings-actions">
+              <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="settings-section" data-settings-section="danger" hidden>
+          <div class="settings-section-head">
+            <h3>Danger zone</h3>
+            <p>These actions are permanent and can't be undone.</p>
+          </div>
+
+          <div class="danger-zone">
+            <div class="settings-row">
+              <div><div class="lbl">Delete your digital twin</div><div class="hint">Removes every memory, conversation and email draft, and disconnects all sources (revoking their Google access). Your login stays, so you can start fresh.</div></div>
+              <button type="button" class="btn-danger" data-danger-open="reset">Delete twin</button>
+            </div>
+            <div class="settings-row">
+              <div><div class="lbl">Delete your account</div><div class="hint">Everything above, plus your account itself. You'll be logged out.</div></div>
+              <button type="button" class="btn-danger" data-danger-open="delete">Delete account</button>
+            </div>
+            <form class="danger-confirm" data-danger-form hidden>
+              <div class="lbl" data-danger-title></div>
+              <div class="field">
+                <label for="setDangerPassword">Enter your password to confirm</label>
+                <input type="password" id="setDangerPassword" autocomplete="current-password" required>
+              </div>
+              <div class="form-alert" data-danger-alert></div>
+              <div class="settings-actions">
+                <button type="submit" class="btn-danger" data-danger-submit></button>
+                <button type="button" class="btn btn-ghost btn-sm" data-danger-cancel>Cancel</button>
+              </div>
+            </form>
           </div>
         </section>
       </div>
@@ -130,7 +188,11 @@
   </main>
 </div>
 
-<script src="js/app.js"></script>
-<script>DT.initSettings();</script>
+<script src="js/app.js?v=8"></script>
+<script>
+  DT.initAuthGuard('login.html');
+  DT.initLogout();
+  DT.initSettings();
+</script>
 </body>
 </html>
