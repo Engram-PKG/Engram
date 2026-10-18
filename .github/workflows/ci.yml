@@ -65,6 +65,10 @@ jobs:
         working-directory: backend
         run: mypy app
 
+      - name: Alembic — run migrations
+        working-directory: backend
+        run: alembic upgrade head
+
       - name: Pytest — run tests
         working-directory: backend
         run: pytest
