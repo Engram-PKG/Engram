@@ -66,6 +66,15 @@ OAuth as the acquisition step): PDFs, voice notes (transcribed via Whisper),
 browser bookmarks exports. WhatsApp chat exports and Apple Notes exports can
 also land here as a manual stopgap.
 
+*Status:* PDFs, `.txt`/`.md` notes, voice notes (Groq-hosted Whisper) and
+Netscape-format bookmark exports are live via `POST /api/v1/uploads/` and
+the Uploads page. Each file is parsed, chunked (~2,000 chars with overlap),
+embedded and stored **inside the request** — no worker hop, so the response
+is the final state. Originals are kept in the `uploads` table so later
+actions can attach the real file; deleting an upload cascades to its
+`memory_items`. Not yet: OCR for scanned PDFs, `.docx`, and the enrichment
+step above (document categories).
+
 **Deferred (explicitly, by user decision):**
 - **WhatsApp automatic sync** — no personal-account API exists; automatic
   access requires an unofficial library (e.g. Baileys) with real ToS/ban

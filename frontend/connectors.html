@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Connect your sources — Digital Twin</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/dashboard.css">
-<link rel="stylesheet" href="css/connector.css">
-<link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/dashboard.css?v=8">
+<link rel="stylesheet" href="css/connector.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
 </head>
 <body>
 
@@ -21,6 +21,8 @@
   <span class="eyebrow">Step 1 of 2</span>
   <h1 class="fade-up" style="font-size:32px;margin-top:12px;">Choose what your twin should learn from.</h1>
   <p class="fade-up" style="max-width:560px;margin-bottom:32px;">Connect at least one source to begin. You can add or remove sources any time from Settings — nothing here is permanent.</p>
+
+  <div class="form-alert" data-connector-alert style="margin-bottom:20px;"></div>
 
   <div class="connector-banner">
     <div class="thread-badge"><div class="core"></div></div>
@@ -39,7 +41,7 @@
 
   <div class="connector-grid" data-connector-grid>
 
-    <div class="connector-card" data-name="Gmail" data-category="comms">
+    <div class="connector-card" data-name="Gmail" data-category="comms" data-provider="gmail">
       <div class="connector-top">
         <div class="connector-icon">✉️</div>
         <span class="connector-status"><span class="dot"></span> Not connected</span>
@@ -51,7 +53,7 @@
       <button class="connector-toggle-btn">Connect</button>
     </div>
 
-    <div class="connector-card" data-name="Google Calendar" data-category="calendar">
+    <div class="connector-card" data-name="Google Calendar" data-category="calendar" data-provider="google_calendar">
       <div class="connector-top">
         <div class="connector-icon">📅</div>
         <span class="connector-status"><span class="dot"></span> Not connected</span>
@@ -72,7 +74,7 @@
         <h4>Notion</h4>
         <p>Index notes, plans, and journals into long-term structured memory.</p>
       </div>
-      <button class="connector-toggle-btn">Connect</button>
+      <button class="connector-toggle-btn" disabled title="Coming soon">Coming soon</button>
     </div>
 
     <div class="connector-card" data-name="Slack" data-category="comms">
@@ -84,7 +86,7 @@
         <h4>Slack</h4>
         <p>Capture how you communicate and collaborate with your team.</p>
       </div>
-      <button class="connector-toggle-btn">Connect</button>
+      <button class="connector-toggle-btn" disabled title="Coming soon">Coming soon</button>
     </div>
 
     <div class="connector-card" data-name="Apple Notes" data-category="notes">
@@ -96,7 +98,7 @@
         <h4>Apple Notes</h4>
         <p>Fold quick thoughts and drafts into your twin's memory graph.</p>
       </div>
-      <button class="connector-toggle-btn">Connect</button>
+      <button class="connector-toggle-btn" disabled title="Deferred — no cloud API for Apple Notes">Coming soon</button>
     </div>
 
     <div class="connector-card" data-name="Outlook Calendar" data-category="calendar">
@@ -108,7 +110,7 @@
         <h4>Outlook Calendar</h4>
         <p>Bring in work scheduling patterns from Microsoft 365.</p>
       </div>
-      <button class="connector-toggle-btn">Connect</button>
+      <button class="connector-toggle-btn" disabled title="Coming soon">Coming soon</button>
     </div>
 
   </div>
@@ -119,26 +121,9 @@
   </div>
 </div>
 
-<!-- permission consent modal -->
-<div class="modal-overlay" id="permissionModal">
-  <div class="modal-card">
-    <button class="modal-close" data-modal-cancel aria-label="Close">✕</button>
-    <h3>Grant access to <span data-modal-source-name>this source</span></h3>
-    <p>Your twin will read the following, encrypted and never shared:</p>
-    <ul class="modal-scope-list">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Read message and document content</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Read timestamps and participants</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> No send, delete, or edit access</li>
-    </ul>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" data-modal-cancel>Cancel</button>
-      <button class="btn btn-primary" data-modal-confirm>Grant access</button>
-    </div>
-  </div>
-</div>
-
-<script src="js/app.js"></script>
+<script src="js/app.js?v=8"></script>
 <script>
+  DT.initAuthGuard('login.html');
   DT.initConnectors();
 </script>
 </body>
